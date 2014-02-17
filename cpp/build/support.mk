@@ -26,14 +26,14 @@ PKGCONFIG := $(shell which pkg-config)
 #svn binary for doing a make dist export
 SVN		:= $(shell which svn)
 # if svnversion is not installed, then set the revision to 0
-ifeq ($(SVNVERSION),)
+#ifeq ($(SVNVERSION),)
 VERSION_REV ?= 0
-else
-VERSION_REV ?= $(shell $(SVNVERSION) $(top_srcdir)|awk -F'[^0-9]*' '$$0=$$1')
-endif
-ifeq ($(VERSION_REV),)
-VERSION_REV ?= 0
-endif
+#else
+#VERSION_REV ?= $(shell $(SVNVERSION) $(top_srcdir)|awk -F'[^0-9]*' '$$0=$$1')
+#endif
+#ifeq ($(VERSION_REV),)
+#VERSION_REV ?= 0
+#endif
 # version number to use on the shared library
 VERSION := $(VERSION_MAJ).$(VERSION_MIN)
 
